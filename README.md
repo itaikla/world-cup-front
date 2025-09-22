@@ -1,70 +1,192 @@
-# Getting Started with Create React App
+# World Cup Players Table
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A beautifully designed React TypeScript component for displaying World Cup player statistics with advanced features like sorting, filtering, and search capabilities.
+
+## Features
+
+- ✨ **Beautiful Design**: Modern UI with gradients, hover effects, and responsive design
+- 🔍 **Global Search**: Search across all player data
+- 📊 **Column Sorting**: Click headers to sort by any column
+- 🎨 **Position-based Styling**: Different colors for Goalkeeper, Defender, Midfielder, Forward
+- 📱 **Responsive**: Works perfectly on desktop, tablet, and mobile
+- ⚡ **TypeScript**: Fully typed with TypeScript for better development experience
+- 📚 **Storybook**: Interactive component documentation and testing
+
+## Technologies Used
+
+- **React 19** - Latest React with modern features
+- **TypeScript 4.9** - Type safety and better DX
+- **TanStack Table v8** - Powerful table functionality
+- **Storybook 9** - Component development and documentation
+- **CSS3** - Modern styling with gradients and animations
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 16+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone <your-repo-url>
+cd world-cup
+```
+
+2. Install dependencies
+```bash
+npm install
+```
+
+3. Start the development server
+```bash
+npm start
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+### Running Storybook
+
+To view and interact with the component in Storybook:
+
+```bash
+npm run storybook
+```
+
+This will open Storybook at [http://localhost:6006](http://localhost:6006).
+
+## Component Usage
+
+### Basic Usage
+
+```tsx
+import { WorldCupPlayersTable, Player } from './components/WorldCupPlayersTable';
+
+const players: Player[] = [
+  {
+    id: 1,
+    name: 'Lionel Messi',
+    country: 'Argentina',
+    position: 'Forward',
+    age: 36,
+    club: 'Inter Miami',
+    goals: 7,
+    assists: 3,
+    appearances: 7,
+    marketValue: 35000000,
+  },
+  // ... more players
+];
+
+function App() {
+  return (
+    <div>
+      <WorldCupPlayersTable data={players} />
+    </div>
+  );
+}
+```
+
+### Props
+
+| Prop | Type | Required | Description |
+|------|------|----------|-------------|
+| `data` | `Player[]` | Yes | Array of player objects to display |
+| `className` | `string` | No | Additional CSS classes for styling |
+
+### Player Interface
+
+```tsx
+interface Player {
+  id: number;
+  name: string;
+  country: string;
+  position: 'Goalkeeper' | 'Defender' | 'Midfielder' | 'Forward';
+  age: number;
+  club: string;
+  goals: number;
+  assists: number;
+  appearances: number;
+  marketValue: number; // in euros
+}
+```
+
+## Features in Detail
+
+### Sorting
+- Click any column header to sort
+- Click again to reverse sort order
+- Visual indicators show current sort direction
+
+### Search
+- Global search across all fields
+- Real-time filtering as you type
+- Case-insensitive search
+
+### Responsive Design
+- Adapts to different screen sizes
+- Optimized for mobile viewing
+- Horizontal scroll for smaller screens
+
+### Position Styling
+- **Goalkeeper**: Yellow badge
+- **Defender**: Green badge  
+- **Midfielder**: Blue badge
+- **Forward**: Red badge
 
 ## Available Scripts
 
-In the project directory, you can run:
+- `npm start` - Runs the app in development mode
+- `npm run build` - Builds the app for production
+- `npm test` - Launches the test runner
+- `npm run storybook` - Starts Storybook development server
+- `npm run build-storybook` - Builds Storybook for production
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+src/
+├── components/
+│   ├── WorldCupPlayersTable.tsx    # Main table component
+│   ├── WorldCupPlayersTable.css    # Component styles
+│   └── index.ts                    # Component exports
+├── data/
+│   ├── samplePlayers.ts            # Sample data
+│   └── index.ts                    # Data exports
+├── stories/
+│   └── WorldCupPlayersTable.stories.ts  # Storybook stories
+├── App.tsx                         # Main app component
+├── App.css                         # App styles
+└── index.tsx                       # App entry point
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Customization
 
-### `npm test`
+The component is highly customizable through CSS classes. You can override styles by targeting the following classes:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- `.world-cup-table-container` - Main container
+- `.world-cup-table` - Table element
+- `.table-header-cell` - Header cells
+- `.table-row` - Table rows
+- `.position-*` - Position badges
+- `.stat-*` - Statistic badges
 
-### `npm run build`
+## Contributing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## License
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### `npm run eject`
+## Acknowledgments
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- TanStack Table for the powerful table functionality
+- React team for the amazing framework
+- Storybook team for the excellent development tools

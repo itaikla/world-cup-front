@@ -1,0 +1,1 @@
+export { default as WorldCupPlayersTable, type Player } from './WorldCupPlayersTable'; 

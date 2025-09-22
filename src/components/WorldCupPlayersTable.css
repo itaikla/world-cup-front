@@ -1,0 +1,308 @@
+.world-cup-table-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.table-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 12px 16px;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 250px;
+  transition: all 0.2s ease;
+  background: #fafafa;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #667eea;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #e1e5e9;
+  background: #ffffff;
+}
+
+.world-cup-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table-header-cell {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 16px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #495057;
+  border-bottom: 2px solid #dee2e6;
+  position: relative;
+  user-select: none;
+}
+
+.table-header-cell.sortable {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.table-header-cell.sortable:hover {
+  background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.sort-indicator {
+  font-size: 12px;
+  color: #6c757d;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.table-header-cell.sortable:hover .sort-indicator {
+  opacity: 1;
+}
+
+.table-row {
+  transition: background-color 0.2s ease;
+}
+
+.table-row:hover {
+  background-color: #f8f9fa;
+}
+
+.table-row:nth-child(even) {
+  background-color: #fdfdfd;
+}
+
+.table-row:nth-child(even):hover {
+  background-color: #f1f3f4;
+}
+
+.table-cell {
+  padding: 14px 12px;
+  border-bottom: 1px solid #e9ecef;
+  vertical-align: middle;
+}
+
+.player-name {
+  display: flex;
+  flex-direction: column;
+}
+
+.player-name .name {
+  font-weight: 600;
+  color: #212529;
+  font-size: 15px;
+}
+
+.country {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: #495057;
+}
+
+.flag {
+  font-size: 16px;
+}
+
+.position {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.position-goalkeeper {
+  background-color: #ffd60a;
+  color: #8b5a00;
+}
+
+.position-defender {
+  background-color: #198754;
+  color: #ffffff;
+}
+
+.position-midfielder {
+  background-color: #0d6efd;
+  color: #ffffff;
+}
+
+.position-forward {
+  background-color: #dc3545;
+  color: #ffffff;
+}
+
+.age {
+  font-weight: 500;
+  color: #6c757d;
+}
+
+.club {
+  font-weight: 500;
+  color: #495057;
+}
+
+.stat-goals {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.stat-assists {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #17a2b8 0%, #6f42c1 100%);
+  color: white;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.stat-appearances {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+  color: white;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.market-value {
+  font-weight: 600;
+  color: #28a745;
+  background-color: #d4edda;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.table-footer {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table-info {
+  font-size: 14px;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .world-cup-table-container {
+    padding: 16px;
+    margin: 0 16px;
+  }
+  
+  .table-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+  
+  .search-input {
+    width: 100%;
+  }
+  
+  .table-title {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .world-cup-table {
+    font-size: 13px;
+  }
+  
+  .table-header-cell,
+  .table-cell {
+    padding: 10px 8px;
+  }
+  
+  .player-name .name {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .world-cup-table-container {
+    padding: 12px;
+    margin: 0 8px;
+  }
+  
+  .table-title {
+    font-size: 20px;
+  }
+  
+  .world-cup-table {
+    font-size: 12px;
+  }
+  
+  .table-header-cell,
+  .table-cell {
+    padding: 8px 6px;
+  }
+} 
