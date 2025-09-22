@@ -1,4 +1,3 @@
-import React from 'react';
 import './App.css';
 import WorldCupPlayersTable from './components/WorldCupPlayersTable';
 import { samplePlayers } from './data/samplePlayers';
