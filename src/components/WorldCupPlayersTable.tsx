@@ -11,6 +11,8 @@ import {
 } from '@tanstack/react-table';
 import './WorldCupPlayersTable.css';
 
+// TODO: Use tanstack virtual
+
 export interface Player {
   id: number;
   name: string;
