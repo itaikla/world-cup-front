@@ -12,6 +12,7 @@ import {
 import './WorldCupPlayersTable.css';
 
 // TODO: Use tanstack virtual
+// https://tanstack.com/support
 
 export interface Player {
   id: number;
